@@ -1,0 +1,551 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/freeall/currency-codes#readme">currency-codes (v1.1.2)</a>
+</h1>
+<h4>Lookup currency codes based on ISO 4217</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.currency-codes">module currency-codes</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.currency-codes.code">
+            function <span class="apidocSignatureSpan">currency-codes.</span>code
+            <span class="apidocSignatureSpan">(code)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.currency-codes.codes">
+            function <span class="apidocSignatureSpan">currency-codes.</span>codes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.currency-codes.countries">
+            function <span class="apidocSignatureSpan">currency-codes.</span>countries
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.currency-codes.country">
+            function <span class="apidocSignatureSpan">currency-codes.</span>country
+            <span class="apidocSignatureSpan">(country)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.currency-codes.number">
+            function <span class="apidocSignatureSpan">currency-codes.</span>number
+            <span class="apidocSignatureSpan">(number)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.currency-codes.code">module currency-codes.code</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.currency-codes.code.code">
+            function <span class="apidocSignatureSpan">currency-codes.</span>code
+            <span class="apidocSignatureSpan">(code)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.currency-codes.codes">module currency-codes.codes</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.currency-codes.codes.codes">
+            function <span class="apidocSignatureSpan">currency-codes.</span>codes
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.currency-codes.countries">module currency-codes.countries</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.currency-codes.countries.countries">
+            function <span class="apidocSignatureSpan">currency-codes.</span>countries
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.currency-codes.country">module currency-codes.country</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.currency-codes.country.country">
+            function <span class="apidocSignatureSpan">currency-codes.</span>country
+            <span class="apidocSignatureSpan">(country)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.currency-codes.number">module currency-codes.number</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.currency-codes.number.number">
+            function <span class="apidocSignatureSpan">currency-codes.</span>number
+            <span class="apidocSignatureSpan">(number)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.currency-codes" id="apidoc.module.currency-codes">module currency-codes</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.currency-codes.code" id="apidoc.element.currency-codes.code">
+        function <span class="apidocSignatureSpan">currency-codes.</span>code
+        <span class="apidocSignatureSpan">(code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">code = function (code) {
+	code = code.toUpperCase();
+
+	return first(data, function(c) {
+		return c.code === code;
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	npm install currency-codes
+
+## code('EUR')
+
+``` js
+var cc = require('currency-codes');
+console.log(cc.<span class="apidocCodeKeywordSpan">code</span>('EUR'));
+
+/*
+{
+	code: 'EUR',
+	number: 978,
+	digits: 2,
+	currency: 'Euro',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.currency-codes.codes" id="apidoc.element.currency-codes.codes">
+        function <span class="apidocSignatureSpan">currency-codes.</span>codes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">codes = function () {
+	return data.map(function(c) {
+		return c.code;
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*/
+```
+
+## codes()
+
+``` js
+var cc = require('currency-codes');
+console.log(cc.<span class="apidocCodeKeywordSpan">codes</span>());
+
+/*
+[
+	'AED',
+	'AFN',
+	...
+	'ZAR',
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.currency-codes.countries" id="apidoc.element.currency-codes.countries">
+        function <span class="apidocSignatureSpan">currency-codes.</span>countries
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">countries = function () {
+	var m = data.filter(function(c) {
+		return c.countries;
+	}).map(function(c) {
+		return c.countries;
+	});
+	return nub(Array.prototype.concat.apply([], m));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*/
+```
+
+## countries()
+
+``` js
+var cc = require('currency-codes');
+console.log(cc.<span class="apidocCodeKeywordSpan">countries</span>());
+
+/*
+[
+	'united arab emirates',
+	'afghanistan',
+	...
+]
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.currency-codes.country" id="apidoc.element.currency-codes.country">
+        function <span class="apidocSignatureSpan">currency-codes.</span>country
+        <span class="apidocSignatureSpan">(country)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">country = function (country) {
+	country = country.toLowerCase();
+
+	return data.filter(function(c) {
+		return (c.countries || []).indexOf(country) &gt; -1;
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*/
+```
+
+## country('colombia')
+
+``` js
+var cc = require('currency-codes');
+console.log(cc.<span class="apidocCodeKeywordSpan">country</span>('colombia'));
+
+/*
+[
+	{
+		code: 'COP',
+		number: 170,
+		digits: 2,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.currency-codes.number" id="apidoc.element.currency-codes.number">
+        function <span class="apidocSignatureSpan">currency-codes.</span>number
+        <span class="apidocSignatureSpan">(number)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">number = function (number) {
+	return first(data, function(c) {
+		return c.number === String(number);
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*/
+```
+
+## number(967)
+
+``` js
+var cc = require('currency-codes');
+console.log(cc.<span class="apidocCodeKeywordSpan">number</span>(967));
+
+/*
+{
+	code: 'ZMW',
+	number: 967,
+	digits: 2,
+	currency: 'Zambian kwacha',
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.currency-codes.code" id="apidoc.module.currency-codes.code">module currency-codes.code</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.currency-codes.code.code" id="apidoc.element.currency-codes.code.code">
+        function <span class="apidocSignatureSpan">currency-codes.</span>code
+        <span class="apidocSignatureSpan">(code)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">code = function (code) {
+	code = code.toUpperCase();
+
+	return first(data, function(c) {
+		return c.code === code;
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+	npm install currency-codes
+
+## code('EUR')
+
+``` js
+var cc = require('currency-codes');
+console.log(cc.<span class="apidocCodeKeywordSpan">code</span>('EUR'));
+
+/*
+{
+	code: 'EUR',
+	number: 978,
+	digits: 2,
+	currency: 'Euro',
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.currency-codes.codes" id="apidoc.module.currency-codes.codes">module currency-codes.codes</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.currency-codes.codes.codes" id="apidoc.element.currency-codes.codes.codes">
+        function <span class="apidocSignatureSpan">currency-codes.</span>codes
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">codes = function () {
+	return data.map(function(c) {
+		return c.code;
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*/
+```
+
+## codes()
+
+``` js
+var cc = require('currency-codes');
+console.log(cc.<span class="apidocCodeKeywordSpan">codes</span>());
+
+/*
+[
+	'AED',
+	'AFN',
+	...
+	'ZAR',
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.currency-codes.countries" id="apidoc.module.currency-codes.countries">module currency-codes.countries</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.currency-codes.countries.countries" id="apidoc.element.currency-codes.countries.countries">
+        function <span class="apidocSignatureSpan">currency-codes.</span>countries
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">countries = function () {
+	var m = data.filter(function(c) {
+		return c.countries;
+	}).map(function(c) {
+		return c.countries;
+	});
+	return nub(Array.prototype.concat.apply([], m));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*/
+```
+
+## countries()
+
+``` js
+var cc = require('currency-codes');
+console.log(cc.<span class="apidocCodeKeywordSpan">countries</span>());
+
+/*
+[
+	'united arab emirates',
+	'afghanistan',
+	...
+]
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.currency-codes.country" id="apidoc.module.currency-codes.country">module currency-codes.country</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.currency-codes.country.country" id="apidoc.element.currency-codes.country.country">
+        function <span class="apidocSignatureSpan">currency-codes.</span>country
+        <span class="apidocSignatureSpan">(country)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">country = function (country) {
+	country = country.toLowerCase();
+
+	return data.filter(function(c) {
+		return (c.countries || []).indexOf(country) &gt; -1;
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*/
+```
+
+## country('colombia')
+
+``` js
+var cc = require('currency-codes');
+console.log(cc.<span class="apidocCodeKeywordSpan">country</span>('colombia'));
+
+/*
+[
+	{
+		code: 'COP',
+		number: 170,
+		digits: 2,
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.currency-codes.number" id="apidoc.module.currency-codes.number">module currency-codes.number</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.currency-codes.number.number" id="apidoc.element.currency-codes.number.number">
+        function <span class="apidocSignatureSpan">currency-codes.</span>number
+        <span class="apidocSignatureSpan">(number)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">number = function (number) {
+	return first(data, function(c) {
+		return c.number === String(number);
+	});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+*/
+```
+
+## number(967)
+
+``` js
+var cc = require('currency-codes');
+console.log(cc.<span class="apidocCodeKeywordSpan">number</span>(967));
+
+/*
+{
+	code: 'ZMW',
+	number: 967,
+	digits: 2,
+	currency: 'Zambian kwacha',
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>

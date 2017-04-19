@@ -1,4 +1,7 @@
-# api documentation for  [currency-codes (v1.1.2)](https://github.com/freeall/currency-codes#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-currency-codes.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-currency-codes) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-currency-codes.svg)](https://travis-ci.org/npmdoc/node-npmdoc-currency-codes)
+# npmdoc-currency-codes
+
+#### api documentation for  [currency-codes (v1.1.2)](https://github.com/freeall/currency-codes#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-currency-codes.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-currency-codes) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-currency-codes.svg)](https://travis-ci.org/npmdoc/node-npmdoc-currency-codes)
+
 #### Lookup currency codes based on ISO 4217
 
 [![NPM](https://nodei.co/npm/currency-codes.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/currency-codes)
